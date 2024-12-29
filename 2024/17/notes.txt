@@ -1,0 +1,28 @@
+Register A: 28422061
+Register B: 0
+Register C: 0
+
+Program: 2,4, # register B = register A & 7 (Keep last 3 bits)
+         1,1, # register B = register B XOR 1
+         7,5, # register C = self.register_a // (2 ** register B)
+         1,5, # register B = register B XOR 5
+         4,2, # register B = register B XOR register C
+         5,5, # print register B % 8
+         0,3, # register A = register A // 8
+         3,0  # if register A != 0: self.pointer = 0
+
+          |
+          v
+
+         # Everything before the print statement:
+         B = ((A & 7) ^ 1)
+         C = A // (2 ** B)
+         B = (B ^ 5) ^ C
+
+          |
+          v
+
+         B = (((A & 7) ^ 1) ^ 5) ^ (A // (2 ** (A & 7) ^ 1))
+         print((((A & 7) ^ 1) ^ 5) ^ (A // (2 ** (A & 7) ^ 1)) % 8)
+         A = A // 8
+         if A != 0: self.pointer = 0
