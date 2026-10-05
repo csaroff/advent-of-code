@@ -1,0 +1,22 @@
+version = 1
+requires-python = ">=3.13"
+
+[[package]]
+name = "12"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "disjoint-set" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "disjoint-set", specifier = ">=0.8.0" }]
+
+[[package]]
+name = "disjoint-set"
+version = "0.8.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/c0/fe/6fa6f037d6ca2b40485423cbfd53e4ed2dadfc8666d92982f18bc421de43/disjoint_set-0.8.0.tar.gz", hash = "sha256:ce37119ca6be07671c4e51410a28511193ec168580ff373b0819d31b34b47728", size = 5939 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a2/7d/af80d6cc77c0e3506de6fc61c2c540e3bd7143474c30a9bd3047cc9496ee/disjoint_set-0.8.0-py3-none-any.whl", hash = "sha256:2f802cd3cd03c651921bde18fa73d316c22104b09e5eab157e30ba322a7aeeae", size = 5551 },
+]
